@@ -1,0 +1,144 @@
+$primary-color: #215B8F;
+$secondary-color: #5F8EB9;
+$dark-color: #2C3136;
+$light-color: #EBEBEB;
+
+body {
+  background-color: $dark-color
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  font-size: 1.125em;
+}
+
+.App {
+  background-color: $dark-color;
+  height: 100%;
+  width: 100%;
+}
+
+.App-header {
+  background-color: $secondary-color;
+  color: $dark-color;
+  padding: 0px 18px;
+  a {
+    text-decoration: none;
+    color: $dark-color;
+  }
+}
+
+.App-body {
+  background-color: $dark-color;
+  height: calc(100vh - 45px);
+  &-inner {
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+    color: $light-color;
+  }
+  &.results {
+    .App-body-inner {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .Home-form {
+      padding: 12px 24px 12px 12px;
+      flex-direction: column;
+    }
+  }
+}
+
+.Home-form {
+  display: flex;
+  input {
+    padding: 12px;
+    margin: 6px;
+    border-radius: 3px;
+    border: none;
+    min-width: 20vw;
+  }
+  input[type=button], input[type=submit] {
+    background-color: $secondary-color;
+    min-width: 10vw;
+  }
+}
+
+p {
+  color: $light-color;
+  margin: 16px 6px;
+}
+
+.Results {
+  &-frame {
+    flex: 1;
+    margin-right: 24px;
+  }
+  &-table {
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #111;
+  }
+  &-row {
+    border-bottom: 1px solid #111;
+    flex-direction: row;
+    &:last-child {
+      border: none;
+    }
+    &.header {
+      font-weight: bold;
+      background-color: rgba(0,0,0,0.25);
+    }
+    &:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+  &-cell {
+    flex: 1;
+    padding: 10px 6px;
+    color: $light-color;
+    border-right: 1px solid #111;
+    justify-content: center;
+    align-items: center;
+    &:last-child {
+      border: none;
+    }
+    input[type=button] {
+      background-color: $secondary-color;
+      color: $dark-color;
+      border: none;
+      border-radius: 3px;
+      width: 66%;
+      padding: 6px;
+    }
+  }
+}
+
+.loading {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 36px;
+    height: 36px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+  }
+  span { 
+    padding: 6px;
+    color: $light-color;
+  }
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
